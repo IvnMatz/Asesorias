@@ -2,11 +2,12 @@
 'use client'
 
 import { useState } from 'react'
+import MainMenu from './mainPage/MainMenu'
 
 export default function Login() {
   const [matricula, setMatricula] = useState('')
   const [contraseña, setContraseña] = useState('')
-  const [alumno, setAlumno] = useState(null)
+  const [alumno, setAlumno] = useState({})
   const [error, setError] = useState('')
   const [cargando, setCargando] = useState(false)
 
@@ -34,7 +35,7 @@ export default function Login() {
         return
       }
 
-      setAlumno(resultado.nombre)
+      setAlumno({nombre: resultado.nombre, matricula: resultado.matricula})
     } catch {
       setError('No se pudo conectar con el servidor')
     } finally {
@@ -43,11 +44,9 @@ export default function Login() {
   }
 
   // Pantalla posterior al inicio de sesión
-  if (alumno) {
+  if (alumno.nombre != null) {
     return (
-      <main style={{ padding: '30px' }}>
-        <h1>Bienvenido, {alumno}</h1>
-      </main>
+      <MainMenu alumno={alumno}/>
     )
   }
 

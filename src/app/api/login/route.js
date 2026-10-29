@@ -31,8 +31,7 @@ export async function POST(request) {
         { status: 500 }
       )
     }
-    // DEMO: compara contraseñas en texto plano.
-    // No uses este método en una aplicación real.
+    
     if (!alumno || alumno.passw !== contraseña) {
       return NextResponse.json(
         { error: 'Matrícula o contraseña incorrectas' },
@@ -41,7 +40,8 @@ export async function POST(request) {
     }
 
     return NextResponse.json({
-      nombre: alumno.nombre
+      nombre: alumno.nombre,
+      matricula: alumno.matricula
     })
   } catch {
     return NextResponse.json(
