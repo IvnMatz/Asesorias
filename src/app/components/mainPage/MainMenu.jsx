@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import TabMenu from "./tabMenu";
-
+import './css/navbar.css'
 
 function Tab({titulo, tabClick, actualTab}){
     if(actualTab == titulo){
@@ -11,7 +11,7 @@ function Tab({titulo, tabClick, actualTab}){
     }
     else{
         return(
-            <button onClick={tabClick}> {titulo} </button>
+            <button onClick={tabClick} className="tab"> {titulo} </button>
         );
     }
 }
@@ -23,8 +23,8 @@ export default function MainMenu({alumno}){
         <div className="mainmenu">
             <div className="navbar">
                 <Tab titulo={"Mis Cursos"} tabClick={() => setTab("Mis Cursos")} actualTab={actualTab} />
-                <Tab titulo={"Cursos Disponibles"} tabClick={() => setTab("Cursos")} actualTab={actualTab} />
-                <Tab titulo={"Buscar Cursos"} tabClick={() => setTab("Buscar")} actualTab={actualTab} />
+                <Tab titulo={"Cursos"} tabClick={() => setTab("Cursos")} actualTab={actualTab} />
+                
             </div>
             <TabMenu actualTab={actualTab} alumno={alumno} />
         </div>

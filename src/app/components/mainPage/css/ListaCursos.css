@@ -1,0 +1,90 @@
+.cursos-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.cursos-titulo {
+  margin: 0 0 24px;
+  font-size: 1.8rem;
+}
+
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.curso-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #222222;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 5%);
+  transition: box-shadow 0.2s ease;
+}
+
+.curso-card:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+}
+
+.curso-nombre {
+  margin: 0 0 16px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.curso-datos p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.curso-datos span {
+  font-weight: 600;
+}
+
+.cursos-mensaje,
+.cursos-error {
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.cursos-error {
+  color: #c62828;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .cursos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .cursos-container {
+    padding: 16px;
+  }
+
+  .cursos-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+
+  .cursos-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .curso-card {
+    padding: 16px;
+  }
+}

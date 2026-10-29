@@ -1,4 +1,5 @@
 import TablaInscripciones from "./inscripciones";
+import ListaCursos from "./cursos";
 
 export default function TabMenu({actualTab, alumno}){
 
@@ -14,14 +15,9 @@ export default function TabMenu({actualTab, alumno}){
         return(
             <div className="content">
                 <h1> {actualTab} </h1>
+                <ListaCursos />
             </div>
         );
     }
-    else if(actualTab == "Buscar"){
-        return(
-            <div className="content">
-                <h1> {actualTab} </h1>
-            </div>
-        );
-    }
+    
 }
