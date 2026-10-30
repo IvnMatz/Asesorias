@@ -3,10 +3,12 @@
 
 import { useState } from 'react'
 import MainMenu from './mainPage/MainMenu'
+import './mainPage/css/login.css'
 
 export default function Login() {
   const [matricula, setMatricula] = useState('')
   const [contraseña, setContraseña] = useState('')
+  const [tipo, setTipo] = useState("alumno")
   const [alumno, setAlumno] = useState({})
   const [error, setError] = useState('')
   const [cargando, setCargando] = useState(false)
@@ -52,23 +54,21 @@ export default function Login() {
 
   // Formulario de inicio de sesión
   return (
-    <main style={{
-      maxWidth: '320px',
-      margin: '100px auto',
-      fontFamily: 'Arial'
-    }}>
+    <main className="login">
       <h1>Iniciar sesión</h1>
 
       <form onSubmit={iniciarSesion}>
+        <select name="tipo" id="tipo" defaultValue={"alumno"} onChange={(e) => setTipo(e.target.value)}>
+            <option value="alumno"> Alumno </option>
+            <option value="profesor"> Profesor </option>
+        </select>
         <label htmlFor="matricula">Matrícula</label>
         <input
           id="matricula"
           value={matricula}
           onChange={(e) => setMatricula(e.target.value)}
           required
-          style={{ display: 'block', width: '100%',
-                   margin: '8px 0 16px', padding: '8px',
-                   boxSizing: 'border-box' }}
+          
         />
 
         <label htmlFor="contraseña">Contraseña</label>
@@ -78,9 +78,7 @@ export default function Login() {
           value={contraseña}
           onChange={(e) => setContraseña(e.target.value)}
           required
-          style={{ display: 'block', width: '100%',
-                   margin: '8px 0 16px', padding: '8px',
-                   boxSizing: 'border-box' }}
+          type='password'
         />
 
         <button type="submit" disabled={cargando}>
@@ -88,7 +86,7 @@ export default function Login() {
         </button>
 
         {error && (
-          <p style={{ color: 'red' }}>{error}</p>
+          <p className="loginError" role="alert">{error}</p>
         )}
       </form>
     </main>

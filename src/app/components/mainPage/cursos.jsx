@@ -6,8 +6,35 @@ import './css/ListaCursos.css'
 
 export default function ListaCursos() {
   const [cursos, setCursos] = useState([])
+  const [ascendente, setAscendente] = useState(true);
   const [cargando, setCargando] = useState(true)
   const [error, setError] = useState('')
+
+//SELECTION SORT
+  function ordenarCursos() {
+  const copia = [...cursos];
+
+  // Selection Sort
+  for (let i = 0; i < copia.length - 1; i++) {
+    let indice = i;
+
+    for (let j = i + 1; j < copia.length; j++) {
+      if (
+        ascendente
+          ? copia[j].id < copia[indice].id
+          : copia[j].id > copia[indice].id
+      ) {
+        indice = j;
+      }
+    }
+
+    // Intercambiar elementos
+    [copia[i], copia[indice]] = [copia[indice], copia[i]];
+  }
+
+  setCursos(copia);
+  setAscendente(!ascendente);
+}
 
   useEffect(() => {
     const controller = new AbortController()
@@ -66,6 +93,9 @@ export default function ListaCursos() {
   return (
     <section className="cursos-container">
       <h1 className="cursos-titulo">Cursos disponibles</h1>
+      <button onClick={ordenarCursos} type="button">
+        Ordenar {ascendente ? "↑" : "↓"}
+        </button>
 
       <div className="cursos-grid">
         {cursos.map((curso, index) => (

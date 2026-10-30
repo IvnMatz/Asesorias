@@ -10,6 +10,7 @@ export async function GET() {
   const { data, error } = await supabase
     .from('cursos')
     .select(`
+      id,
       nombre,
       hora,
       fecha,
@@ -18,7 +19,7 @@ export async function GET() {
         nombre
       )
     `)
-    .order('nombre', { ascending: true })
+    
 
   if (error) {
     console.error('Error al consultar cursos:', error)
@@ -30,6 +31,7 @@ export async function GET() {
   }
 
   const cursos = data.map((curso) => ({
+    id: curso.id,
     nombre: curso.nombre,
     hora: curso.hora,
     fecha: curso.fecha,

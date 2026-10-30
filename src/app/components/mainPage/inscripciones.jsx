@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import './css/ListaCursos.css'
 
 export default function TablaInscripciones({ matricula }) {
   const [inscripciones, setInscripciones] = useState([])
@@ -64,28 +65,34 @@ export default function TablaInscripciones({ matricula }) {
   }
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Curso</th>
-          <th>Hora</th>
-          <th>Fecha</th>
-          <th>Rama</th>
-          <th>Maestro</th>
-        </tr>
-      </thead>
+  <div className="cursos-container">
+    <div className="cursos-grid">
+      {inscripciones.map((inscripcion, index) => (
+        <div
+          className="curso-card"
+          key={`${inscripcion.nombre}-${index}`}
+        >
+          <h3 className='curso-nombre'>{inscripcion.nombre}</h3>
+          <div className='curso-datos'>
+          <p>
+            <strong>Hora:</strong> {inscripcion.hora}
+          </p>
 
-      <tbody>
-        {inscripciones.map((inscripcion, index) => (
-          <tr key={`${inscripcion.nombre}-${index}`}>
-            <td>{inscripcion.nombre}</td>
-            <td>{inscripcion.hora}</td>
-            <td>{inscripcion.fecha}</td>
-            <td>{inscripcion.rama}</td>
-            <td>{inscripcion.maestro}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  )
+          <p>
+            <strong>Fecha:</strong> {inscripcion.fecha}
+          </p>
+
+          <p>
+            <strong>Rama:</strong> {inscripcion.rama}
+          </p>
+
+          <p>
+            <strong>Maestro:</strong> {inscripcion.maestro}
+          </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 }

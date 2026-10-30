@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Asesorias",
-  description: "Pagina de asesorias",
+  description: "Basura de asesorias para estructura. Tiene errores de seguridad, de arquitectura y de sintaxis",
 };
 
 export default function RootLayout({ children }) {
