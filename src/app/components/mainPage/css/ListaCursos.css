@@ -61,6 +61,22 @@
   color: #c62828;
 }
 
+.curso-inscribirse {
+display: block;
+width: 100%;
+margin-top: 18px;
+padding: 11px 16px;
+border: none;
+border-radius: 6px;
+background-color: #2563eb;
+color: #ffffff;
+font-family: inherit;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
 /* Tablets */
 @media (max-width: 900px) {
   .cursos-grid {

@@ -28,7 +28,7 @@ export default function ListaCursos() {
       }
     }
 
-    // Intercambiar elementos
+    
     [copia[i], copia[indice]] = [copia[indice], copia[i]];
   }
 
@@ -103,7 +103,7 @@ export default function ListaCursos() {
             className="curso-card"
             key={`${curso.nombre}-${index}`}
           >
-            <h2 className="curso-nombre">{curso.nombre}</h2>
+            <h2 className="curso-nombre">{curso.id}.- {curso.nombre}</h2>
 
             <div className="curso-datos">
               <p>
@@ -121,6 +121,14 @@ export default function ListaCursos() {
               <p>
                 <span>Maestro:</span> {curso.maestro}
               </p>
+
+              <button
+                type="button"
+                className="curso-inscribirse"
+                onClick={() => inscribirse(curso.id)}
+                >
+                Inscribirse
+            </button>
             </div>
           </article>
         ))}
