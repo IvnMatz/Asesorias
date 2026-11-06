@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 import Link from "next/link";
 import { createClient } from '@/lib/supabase/server'
 import styles from './home.module.css'
+import LogoutButton from './logoutbut';
 
 
 export default async function HomePage() {
@@ -31,7 +32,9 @@ export default async function HomePage() {
 
   // 4. Mostrar catálogo
   return (
+    
     <main className={styles.container}>
+      <LogoutButton />
       <header className={styles.header}>
         <h1>Catálogo de cursos</h1>
         <p>Explora los cursos disponibles.</p>
