@@ -1,6 +1,7 @@
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
+import LogoutButton from './logoutbut'
 
 export default async function HomePage() {
   const supabase = await createClient()
@@ -17,6 +18,7 @@ export default async function HomePage() {
       <h1>Inicio</h1>
       <p>Has iniciado sesión correctamente.</p>
       <p>Tu UUID: {userId}</p>
+      <LogoutButton />
     </main>
   )
 }
