@@ -34,9 +34,9 @@ export default async function CursoPage({ params }) {
     required_role: 'alumno'
   })
 
-  if (!esAlumno) {
+  /*if (!esAlumno) {
     throw new Error('No tienes permiso para solicitar inscripción.')
-  }
+  } */
   // 4. Consultar inscripción, solo si es alumno
   let inscripcion = null
  

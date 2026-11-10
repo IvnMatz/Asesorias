@@ -1,0 +1,209 @@
+.container {
+  width: min(100% - 40px, 1100px);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.header {
+  margin-bottom: 35px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  color: #1f2937;
+  font-size: 2rem;
+}
+
+.header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.courses {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.courseSection {
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.courseHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.courseHeader h2 {
+  margin: 7px 0;
+  color: #1f2937;
+  font-size: 1.3rem;
+}
+
+.courseHeader p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.category {
+  color: #2563eb;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.queueCount {
+  flex-shrink: 0;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.requestCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: #f9fafb;
+}
+
+.requestInfo h3 {
+  margin: 8px 0;
+  color: #111827;
+  font-size: 1.15rem;
+}
+
+.requestInfo p {
+  margin: 5px 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.position {
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.date {
+  margin-top: 12px !important;
+  color: #9ca3af !important;
+  font-size: 0.8rem !important;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.actions button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.approveButton {
+  background: #16a34a;
+  color: white;
+}
+
+.approveButton:hover:not(:disabled) {
+  background: #15803d;
+}
+
+.rejectButton {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.rejectButton:hover:not(:disabled) {
+  background: #fecaca;
+}
+
+.remaining {
+  margin: 13px 0 0;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.empty {
+  padding: 55px 20px;
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.empty h2 {
+  margin: 0 0 10px;
+  color: #374151;
+  font-size: 1.2rem;
+}
+
+.empty p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.error {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: min(100% - 24px, 1100px);
+    padding: 25px 0;
+  }
+
+  .courseSection {
+    padding: 16px;
+  }
+
+  .requestCard {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+
+  .courseHeader {
+    align-items: flex-start;
+  }
+}
