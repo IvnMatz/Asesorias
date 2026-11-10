@@ -61,9 +61,13 @@ export default async function HomePage() {
               <div className={styles.info}>
                 <p>
                   <strong>Maestro:</strong>{' '}
-                  {curso.maestro_nombre
-                    ? `${curso.maestro_nombre} ${curso.maestro_apellido ?? ''}`
-                    : 'No asignado'}
+                  {curso.maestro_nombre ? (
+    <Link href={`/profesor/${curso.maestro_id}`}>
+      {curso.maestro_nombre} {curso.maestro_apellido ?? ''}
+    </Link>
+  ) : (
+    'No asignado'
+  )}
                 </p>
 
                 <p>

@@ -41,5 +41,5 @@ export async function solicitarInscripcion(formData) {
   }
 
   // 4. Volver al curso
-  redirect(`/curso/${cursoId}`)
+  redirect(`/course/${cursoId}`)
 }
