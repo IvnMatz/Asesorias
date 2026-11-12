@@ -49,6 +49,8 @@ export default async function Navbar() {
   if (alumno.data) {
     links = [
       { label: 'Inicio', href: '/home' },
+      { label: 'Rutas', href: '/routes' },
+      { label: 'Buscar', href: '/search' },
       { label: 'Mis cursos', href: '/my-courses' }
     ]
   } else if (maestro.data) {
@@ -56,6 +58,8 @@ export default async function Navbar() {
       { label: 'Inicio', href: '/home' },
       
       { label: 'Administrar cursos', href: '/courses' },
+      
+      { label: 'Buscar', href: '/search' },
       { label: 'Mi perfil', href: `/profesor/${userId}` }
     ]
   } else if (administrador.data) {
