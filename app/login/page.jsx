@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import './login.css'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -34,36 +35,48 @@ export default function LoginPage() {
   }
 
   return (
-    <main>
+    <main className="login-page">
+  <div className="login-container">
+    <div className="login-card">
       <h1>Iniciar sesión</h1>
 
       <form onSubmit={iniciarSesion}>
-        <label htmlFor="email">Correo electrónico</label>
-        <input
-          id="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          autoComplete="email"
-          required
-        />
+        <div className="form-group">
+          <label htmlFor="email">Correo electrónico</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
+            required
+          />
+        </div>
 
-        <label htmlFor="password">Contraseña</label>
-        <input
-          id="password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete="current-password"
-          required
-        />
+        <div className="form-group">
+          <label htmlFor="password">Contraseña</label>
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+            required
+          />
+        </div>
 
-        {error && <p role="alert">{error}</p>}
+        {error && (
+          <p className="login-error" role="alert">
+            {error}
+          </p>
+        )}
 
         <button type="submit" disabled={cargando}>
           {cargando ? 'Validando...' : 'Entrar'}
         </button>
       </form>
-    </main>
+    </div>
+  </div>
+</main>
   )
 }

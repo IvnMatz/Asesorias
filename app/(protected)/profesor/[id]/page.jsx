@@ -81,7 +81,7 @@ export default async function ProfesorPage({ params }) {
                   <p>{curso.descripcion}</p>
                 )}
 
-                <Link href={`/curso/${curso.id}`}>
+                <Link href={`/course/${curso.id}`}>
                   Ver curso
                 </Link>
               </article>
