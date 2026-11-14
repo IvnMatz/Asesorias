@@ -2,6 +2,7 @@ import { notFound, redirect } from 'next/navigation'
 import { connection } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
+import styles from './home.module.css'
 
 
 export default async function ProfesorPage({ params }) {
@@ -43,52 +44,73 @@ export default async function ProfesorPage({ params }) {
   }
 
   return (
-    <main>
-      <header>
-        <h1>
-          {profesor.nombre} {profesor.apellido}
-        </h1>
+    <main className={styles.profesorPage}>
+  <header className={styles.profesorHeader}>
+    <div className={styles.profesorInfo}>
+      <span className={styles.profesorBadge}>Profesor</span>
 
-        <p>Profesor</p>
+      <h1>
+        {profesor.nombre} {profesor.apellido}
+      </h1>
 
-        <p>
-          Cursos impartidos: {profesor.total_cursos}
-        </p>
-      </header>
+      <p className={styles.profesorStats}>
+        Cursos impartidos:
+        <strong>{profesor.total_cursos}</strong>
+      </p>
+    </div>
+  </header>
 
-      <section>
-        <h2>Cursos del profesor</h2>
+  <section className={styles.cursosSection}>
+    <div className={styles.sectionHeader}>
+      <h2>Cursos del profesor</h2>
+      <span>{cursos.length} cursos</span>
+    </div>
 
-        {cursosError ? (
-          <p>No fue posible cargar los cursos.</p>
-        ) : cursos.length === 0 ? (
-          <p>Este profesor todavía no tiene cursos disponibles.</p>
-        ) : (
-          <div>
-            {cursos.map((curso) => (
-              <article key={curso.id}>
-                <h3>{curso.nombre}</h3>
+    {cursosError ? (
+      <p className={styles.messageError}>
+        No fue posible cargar los cursos.
+      </p>
+    ) : cursos.length === 0 ? (
+      <p className={styles.emptyMessage}>
+        Este profesor todavía no tiene cursos disponibles.
+      </p>
+    ) : (
+      <div className={styles.cursosGrid}>
+        {cursos.map((curso) => (
+          <article
+            key={curso.id}
+            className={styles.cursoCard}
+          >
+            <div className={styles.cursoContent}>
+              <span className={styles.cursoCategoria}>
+                {curso.rama || 'Sin categoría'}
+              </span>
 
-                <p>
-                  {curso.rama || 'Sin categoría'}
+              <h3>{curso.nombre}</h3>
+
+              <p className={styles.cursoHorario}>
+                <strong>Horario:</strong>{' '}
+                {curso.hora || 'Sin horario'}
+              </p>
+
+              {curso.descripcion && (
+                <p className={styles.cursoDescripcion}>
+                  {curso.descripcion}
                 </p>
+              )}
+            </div>
 
-                <p>
-                  Horario: {curso.hora || 'Sin horario'}
-                </p>
-
-                {curso.descripcion && (
-                  <p>{curso.descripcion}</p>
-                )}
-
-                <Link href={`/course/${curso.id}`}>
-                  Ver curso
-                </Link>
-              </article>
-            ))}
-          </div>
-        )}
-      </section>
-    </main>
+            <Link
+              href={`/course/${curso.id}`}
+              className={styles.cursoLink}
+            >
+              Ver curso →
+            </Link>
+          </article>
+        ))}
+      </div>
+    )}
+  </section>
+</main>
   )
 }

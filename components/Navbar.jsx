@@ -60,6 +60,7 @@ export default async function Navbar() {
       { label: 'Administrar cursos', href: '/courses' },
       
       { label: 'Buscar', href: '/search' },
+      { label: 'Peticiones', href: `/requests` },
       { label: 'Mi perfil', href: `/profesor/${userId}` }
     ]
   } else if (administrador.data) {

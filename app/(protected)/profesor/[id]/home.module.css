@@ -1,69 +1,180 @@
-.container {
-  width: min(1100px, 90%);
-  margin: 40px auto;
+
+.profesorPage {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
 }
 
-.header {
-  margin-bottom: 30px;
+/* Encabezado del profesor */
+
+.profesorHeader {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 36px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.header h1 {
+.profesorInfo h1 {
   font-size: 2rem;
-  margin-bottom: 8px;
+  color: #1f2937;
+  margin: 12px 0;
 }
 
-.header p {
-  color: #777;
+.profesorBadge {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
-.grid {
+.profesorStats {
+  color: #6b7280;
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.profesorStats strong {
+  color: #1f2937;
+}
+
+/* Sección de cursos */
+
+.cursosSection {
+  width: 100%;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.sectionHeader h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+.sectionHeader span {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Grid de cursos */
+
+.cursosGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
 }
 
-.card {
+.cursoCard {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 22px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  background: white;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 24px;
+  min-height: 230px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cardHeader h2 {
-  margin-top: 10px;
-  font-size: 1.25rem;
+.cursoCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-.rama {
+.cursoCategoria {
   display: inline-block;
+  color: #4f46e5;
   font-size: 0.8rem;
-  color: #555;
-  background: #eee;
-  padding: 5px 10px;
-  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
-.info p {
-  margin: 6px 0;
+.cursoContent h3 {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-bottom: 14px;
+}
+
+.cursoHorario {
   font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 12px;
 }
 
-.description {
-  color: #666;
+.cursoDescripcion {
   font-size: 0.9rem;
   line-height: 1.5;
+  color: #6b7280;
+  margin-bottom: 20px;
 }
 
-.link {
-  margin-top: auto;
-  text-decoration: none;
-  color: #2563eb;
+.cursoLink {
+  display: inline-block;
+  align-self: flex-start;
+  color: #4f46e5;
   font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: 20px;
 }
 
-.link:hover {
+.cursoLink:hover {
+  color: #3730a3;
   text-decoration: underline;
+}
+
+/* Mensajes */
+
+.emptyMessage,
+.messageError {
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.emptyMessage {
+  background: #f9fafb;
+  color: #6b7280;
+}
+
+.messageError {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .profesorPage {
+    padding: 24px 16px;
+  }
+
+  .profesorHeader {
+    padding: 24px;
+  }
+
+  .profesorInfo h1 {
+    font-size: 1.6rem;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .cursosGrid {
+    grid-template-columns: 1fr;
+  }
 }
