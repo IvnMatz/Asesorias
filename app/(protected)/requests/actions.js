@@ -3,7 +3,7 @@
 import { createClient } from '@/lib/supabase/server'
 
 export async function actualizarSolicitud(id, nuevoEstado) {
-  if (!id || !['aceptada', 'rechazada'].includes(nuevoEstado)) {
+  if (!id || !['aprobada', 'rechazada'].includes(nuevoEstado)) {
     return {
       success: false,
       message: 'Datos de solicitud inválidos.'
@@ -63,7 +63,7 @@ export async function actualizarSolicitud(id, nuevoEstado) {
 
   return {
     success: true,
-    message: nuevoEstado === 'aceptada'
+    message: nuevoEstado === 'aprobada'
       ? 'Solicitud aceptada.'
       : 'Solicitud rechazada.'
   }
