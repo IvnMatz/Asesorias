@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import { connection } from 'next/server';
+import Link from 'next/link';
 
 import { createClient } from '@/lib/supabase/server';
 
@@ -47,6 +48,10 @@ export default async function AccountsPage() {
           de la plataforma.
         </p>
       </header>
+
+      <Link href="/accounts/pending" className={styles.pendingAccountsLink}>
+        Cuentas pendientes
+      </Link>
 
       <section className={styles.inviteSection}>
         <UserInvite />

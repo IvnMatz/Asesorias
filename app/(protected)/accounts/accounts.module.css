@@ -101,3 +101,18 @@
   color: #15803d;
   font-size: 0.9rem;
 }
+
+.pendingAccountsLink {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.pendingAccountsLink:hover {
+  background: #f2f2f2;
+}

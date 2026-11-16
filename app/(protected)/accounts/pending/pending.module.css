@@ -1,0 +1,158 @@
+.pendingPage {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  color: #20242c;
+}
+
+.pendingHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.pendingHeader h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.pendingHeader p {
+  margin: 0;
+  color: #737b89;
+  font-size: 0.95rem;
+}
+
+.pendingCount {
+  margin-bottom: 14px;
+  color: #626b79;
+  font-size: 0.9rem;
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e1e4e9;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.pendingTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.pendingTable thead {
+  background: #f5f6f8;
+}
+
+.pendingTable th {
+  padding: 15px 18px;
+  color: #555e6c;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+  border-bottom: 1px solid #e1e4e9;
+}
+
+.pendingTable td {
+  padding: 16px 18px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.pendingTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pendingTable tbody tr:hover {
+  background: #fafbfc;
+}
+
+.accountName {
+  font-weight: 600;
+  color: #252b35;
+}
+
+.accountEmail {
+  color: #697281;
+}
+
+.accountType {
+  color: #505967;
+}
+
+.roleSelect {
+  min-width: 155px;
+  padding: 9px 12px;
+  border: 1px solid #d7dce3;
+  border-radius: 7px;
+  background: #fff;
+  color: #303744;
+  font-size: 0.875rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.roleSelect:focus {
+  border-color: #64748b;
+  box-shadow: 0 0 0 2px rgba(100, 116, 139, 0.12);
+}
+
+.assignButton {
+  padding: 9px 15px;
+  border: none;
+  border-radius: 7px;
+  background: #27364b;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.assignButton:hover:not(:disabled) {
+  background: #3b4e68;
+}
+
+.assignButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  margin: 12px 0;
+  padding: 12px 15px;
+  border: 1px solid #f0caca;
+  border-radius: 7px;
+  background: #fff5f5;
+  color: #b42318;
+  font-size: 0.9rem;
+}
+
+.emptyState {
+  padding: 45px 20px;
+  text-align: center;
+  color: #737b89;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+  .pendingPage {
+    padding: 24px 14px;
+  }
+
+  .pendingHeader h1 {
+    font-size: 1.5rem;
+  }
+
+  .pendingTable th,
+  .pendingTable td {
+    padding: 13px 14px;
+  }
+}
