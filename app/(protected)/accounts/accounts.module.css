@@ -1,0 +1,103 @@
+
+.accountsPage {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.accountsHeader {
+  margin-bottom: 30px;
+}
+
+.accountsHeader h1 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.accountsHeader p {
+  color: #6b7280;
+}
+
+.inviteSection {
+  margin-bottom: 32px;
+}
+
+.inviteCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.inviteHeader {
+  margin-bottom: 20px;
+}
+
+.inviteHeader h2 {
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.inviteHeader p {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.inviteForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 11px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.inviteForm button {
+  padding: 12px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.inviteForm button:hover {
+  background: #4338ca;
+}
+
+.inviteForm button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  color: #dc2626;
+  font-size: 0.9rem;
+}
+
+.successMessage {
+  color: #15803d;
+  font-size: 0.9rem;
+}
