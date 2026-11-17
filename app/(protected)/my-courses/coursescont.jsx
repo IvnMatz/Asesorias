@@ -152,7 +152,7 @@ export default function MyCoursesContent({
 
                 {curso && (
                   <Link
-                    href={`/curso/${curso.id}`}
+                    href={`/course/${curso.id}`}
                     className={styles.link}
                   >
                     Ver curso

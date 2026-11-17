@@ -40,7 +40,7 @@ export default async function HomePage() {
         <p>Explora los cursos disponibles.</p>
       </header>
 
-      <p>Tu UUID: {userId}</p>
+      
 
       {cursosError ? (
         <p>No fue posible cargar los cursos.</p>
