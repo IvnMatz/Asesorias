@@ -136,7 +136,7 @@ export default function PendingAccountsTable({
                         (role.nombre === 'maestro' &&
                           account.es_maestro &&
                           !account.es_alumno) ||
-                        (role.nombre === 'administración' &&
+                        (role.nombre === 'administrador' &&
                           !account.es_alumno &&
                           !account.es_maestro);
 

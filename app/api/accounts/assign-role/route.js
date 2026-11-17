@@ -157,7 +157,7 @@ export async function POST(request) {
     const registroCoherente =
       (role.nombre === 'alumno' && !!alumno && !maestro) ||
       (role.nombre === 'maestro' && !!maestro && !alumno) ||
-      (role.nombre === 'administración' && !alumno && !maestro);
+      (role.nombre === 'administrador' && !alumno && !maestro);
 
     if (!registroCoherente) {
       return NextResponse.json(
